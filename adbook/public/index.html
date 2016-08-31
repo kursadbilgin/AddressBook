@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+
+  <body>
+
+    <h1>AddressBook</h1>
+
+    <form action="add" method="post">
+      <label>Name:</label>&nbsp; &nbsp;
+      <input type="text" name="name"><br><br>
+      <label>Address:</label>
+      <input type="text" name="address"><br>
+      <input type="submit" value="Add">
+    </form>
+
+    <ul>
+      {{ #addressbook }}
+      <li>
+        <span style="color:blue;">{{name}}</span>
+        &nbsp; -> &nbsp;
+        <span address="address">{{address}}</span> &nbsp; &nbsp;
+        (
+        <a href="delete/{{id}}"><input id="button2" type="button" name="button2" value="Delete"/></a>
+        &nbsp; <-> &nbsp;
+        <a href="update/{{id}}"><input id="button3" type="button" name="button3" value="Update"/></a>
+        )
+      </li>
+      {{ /addressbook }}
+    </ul>
+
+  </body>
+</html>
